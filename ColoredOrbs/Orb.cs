@@ -13,7 +13,14 @@ namespace ColoredOrbs
         int size;
         int timesThrown;
 
-        // Constructor
+        // Constructors
+        public Orb(Color color, int size)
+        {
+            this.color = color;
+            this.size = size;
+            this.timesThrown = timesThrown;
+        }
+
         public Orb (Color color, int size, int timesThrown)
         {
             this.color = color;
@@ -30,6 +37,11 @@ namespace ColoredOrbs
         public int GetTimesThrown()
         {
             return timesThrown;
+        }
+
+        public Color GetColor()
+        {
+            return color;
         }
 
         // Setters
@@ -51,7 +63,10 @@ namespace ColoredOrbs
 
         public void Throw()
         {
-            ++timesThrown;
+            if (size > 0)
+            {
+                ++timesThrown;
+            }
         }
     }
 }
